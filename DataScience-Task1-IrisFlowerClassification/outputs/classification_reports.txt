@@ -1,0 +1,43 @@
+===== Logistic Regression =====
+              precision    recall  f1-score   support
+
+      setosa      1.000     1.000     1.000        10
+  versicolor      0.900     0.900     0.900        10
+   virginica      0.900     0.900     0.900        10
+
+    accuracy                          0.933        30
+   macro avg      0.933     0.933     0.933        30
+weighted avg      0.933     0.933     0.933        30
+
+===== K-Nearest Neighbours =====
+              precision    recall  f1-score   support
+
+      setosa      1.000     1.000     1.000        10
+  versicolor      0.833     1.000     0.909        10
+   virginica      1.000     0.800     0.889        10
+
+    accuracy                          0.933        30
+   macro avg      0.944     0.933     0.933        30
+weighted avg      0.944     0.933     0.933        30
+
+===== Decision Tree =====
+              precision    recall  f1-score   support
+
+      setosa      1.000     1.000     1.000        10
+  versicolor      0.900     0.900     0.900        10
+   virginica      0.900     0.900     0.900        10
+
+    accuracy                          0.933        30
+   macro avg      0.933     0.933     0.933        30
+weighted avg      0.933     0.933     0.933        30
+
+===== Random Forest =====
+              precision    recall  f1-score   support
+
+      setosa      1.000     1.000     1.000        10
+  versicolor      0.818     0.900     0.857        10
+   virginica      0.889     0.800     0.842        10
+
+    accuracy                          0.900        30
+   macro avg      0.902     0.900     0.900        30
+weighted avg      0.902     0.900     0.900        30
