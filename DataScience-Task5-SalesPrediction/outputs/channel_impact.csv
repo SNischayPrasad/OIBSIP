@@ -1,0 +1,4 @@
+,linear_coef,standardised_coef,rf_importance
+TV,0.0447,3.776,0.6254
+Radio,0.1892,2.8011,0.3618
+Newspaper,0.0028,0.0562,0.0128

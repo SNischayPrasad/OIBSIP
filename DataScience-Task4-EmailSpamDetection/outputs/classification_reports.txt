@@ -1,0 +1,29 @@
+===== Multinomial Naive Bayes =====
+              precision    recall  f1-score   support
+
+         ham      0.992     0.994     0.993       904
+        spam      0.961     0.947     0.954       131
+
+    accuracy                          0.988      1035
+   macro avg      0.977     0.971     0.974      1035
+weighted avg      0.988     0.988     0.988      1035
+
+===== Logistic Regression =====
+              precision    recall  f1-score   support
+
+         ham      0.992     0.992     0.992       904
+        spam      0.947     0.947     0.947       131
+
+    accuracy                          0.986      1035
+   macro avg      0.969     0.969     0.969      1035
+weighted avg      0.986     0.986     0.986      1035
+
+===== Linear SVM =====
+              precision    recall  f1-score   support
+
+         ham      0.992     0.993     0.993       904
+        spam      0.954     0.947     0.950       131
+
+    accuracy                          0.987      1035
+   macro avg      0.973     0.970     0.972      1035
+weighted avg      0.987     0.987     0.987      1035
