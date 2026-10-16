@@ -2,6 +2,8 @@
 
 **Oasis Infobyte Internship (OIBSIP) · Data Science · Task 5**
 
+🚀 **Live demo:** https://nischay-oibsip-data-science.vercel.app/#sales · 🎬 [Demo video with voice-over](../website/videos/sales.mp4)
+
 Predicts product sales from advertising spend on **TV**, **Radio** and **Newspaper**, and identifies which
 channel has the greatest impact on sales.
 
