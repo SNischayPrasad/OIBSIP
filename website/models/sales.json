@@ -1,0 +1,1 @@
+{"terms": ["TV", "Radio", "Newspaper", "TV^2", "TV Radio", "TV Newspaper", "Radio^2", "Radio Newspaper", "Newspaper^2"], "coef": [0.053235616, 0.0170980451, 0.0105807447, -0.0001122868, 0.0011112174, -7.3799e-05, 0.000132843, 0.0001248925, 2.79666e-05], "intercept": 4.93901488, "ranges": {"TV": [0.7, 296.4], "Radio": [0.0, 49.6], "Newspaper": [0.3, 114.0]}, "test_r2": 0.9869}
