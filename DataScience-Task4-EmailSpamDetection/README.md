@@ -2,6 +2,8 @@
 
 **Oasis Infobyte Internship (OIBSIP) · Data Science · Task 4**
 
+🚀 **Live demo:** https://nischay-oibsip-data-science.vercel.app/#spam · 🎬 [Demo video with voice-over](../website/videos/spam.mp4)
+
 An NLP classifier that labels a message as **spam** or **ham** (legitimate), using text preprocessing,
 TF-IDF features and Multinomial Naive Bayes, Logistic Regression and a Linear SVM.
 

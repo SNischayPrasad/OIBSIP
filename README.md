@@ -2,6 +2,8 @@
 
 Projects completed during the **Oasis Infobyte Internship Program (OIBSIP)**, Data Science track.
 
+**Live demo website:** https://nischay-oibsip-data-science.vercel.app (try all three models in your browser; source in [`website/`](website)).
+
 | Task | Project | Highlights |
 |---|---|---|
 | Task 1 | [Iris Flower Classification](DataScience-Task1-IrisFlowerClassification) | 4 classifiers compared; KNN best (96.7% CV accuracy) |
