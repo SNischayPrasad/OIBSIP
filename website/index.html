@@ -10,13 +10,15 @@
 <meta property="og:image" content="assets/og.png">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='7' fill='%230f766e'/><path d='M8 22l5-6 4 3 7-9' stroke='white' stroke-width='3' fill='none' stroke-linecap='round' stroke-linejoin='round'/></svg>">
 <link rel="stylesheet" href="style.css">
+<script>{const h=location.hash.slice(1);if(["iris","spam","sales"].includes(h))location.replace(h+".html");}</script>
+
 </head>
 <body>
 <header class="top">
   <div class="wrap nav">
-    <a class="brand" href="#top">Nischay<span>.ds</span></a>
+    <a class="brand" href="index.html">Nischay<span>.ds</span></a>
     <nav>
-      <a href="#iris">Iris</a><a href="#spam">Spam</a><a href="#sales">Sales</a>
+      <a href="iris.html">Iris</a><a href="spam.html">Spam</a><a href="sales.html">Sales</a>
       <a class="gh" href="https://github.com/SNischayPrasad/OIBSIP" target="_blank" rel="noopener">GitHub ↗</a>
     </nav>
   </div>
@@ -27,179 +29,15 @@
   <div class="wrap">
     <p class="eyebrow">Oasis Infobyte Internship · Data Science track</p>
     <h1>Three machine learning projects you can try right here.</h1>
-    <p class="lede">Built by <strong>Sadhanala Nischay Prasad</strong>. Every model below runs live in your browser, using the same parameters trained in the project notebooks.</p>
+    <p class="lede">Built by <strong>Sadhanala Nischay Prasad</strong>. Each project has its own page where the model runs live in your browser, using the same parameters trained in the project notebooks.</p>
     <div class="cards">
-      <a class="card" href="#iris"><span class="tag">Task 1 · Classification</span><b>Iris Flower Classification</b><span class="stat">96.7% CV accuracy</span></a>
-      <a class="card" href="#spam"><span class="tag">Task 4 · NLP</span><b>Email Spam Detection</b><span class="stat">98.8% accuracy</span></a>
-      <a class="card" href="#sales"><span class="tag">Task 5 · Regression</span><b>Sales Prediction</b><span class="stat">R² = 0.987</span></a>
+      <a class="card" href="iris.html"><span class="tag">Task 1 · Classification</span><b>Iris Flower Classification</b><span class="desc">Predicts the species from four flower measurements.</span><span class="stat">96.7% CV accuracy</span><span class="go">Open project →</span></a>
+      <a class="card" href="spam.html"><span class="tag">Task 4 · NLP</span><b>Email Spam Detection</b><span class="desc">Flags spam messages with TF-IDF and Naive Bayes.</span><span class="stat">98.8% accuracy</span><span class="go">Open project →</span></a>
+      <a class="card" href="sales.html"><span class="tag">Task 5 · Regression</span><b>Sales Prediction</b><span class="desc">Predicts sales from TV, Radio and Newspaper ad spend.</span><span class="stat">R² = 0.987</span><span class="go">Open project →</span></a>
     </div>
   </div>
 </section>
 
-<!-- ============ IRIS ============ -->
-<section id="iris" class="project">
-  <div class="wrap">
-    <div class="phead">
-      <div>
-        <p class="eyebrow">Task 1 · Classification</p>
-        <h2>Iris Flower Classification</h2>
-        <p>Identifies an iris flower's species (<em>setosa</em>, <em>versicolor</em> or <em>virginica</em>) from four measurements. Four classifiers were compared; <b>K-Nearest Neighbours</b> won on cross-validation.</p>
-      </div>
-      <div class="links">
-        <a class="btn" href="https://github.com/SNischayPrasad/OIBSIP/tree/main/DataScience-Task1-IrisFlowerClassification" target="_blank" rel="noopener">Code on GitHub ↗</a>
-        <a class="btn ghost" href="https://github.com/SNischayPrasad/OIBSIP/blob/main/DataScience-Task1-IrisFlowerClassification/Iris_Flower_Classification.ipynb" target="_blank" rel="noopener">Notebook ↗</a>
-      </div>
-    </div>
-    <div class="metrics">
-      <div><b>93.3%</b><span>test accuracy</span></div>
-      <div><b>96.7%</b><span>5-fold CV accuracy</span></div>
-      <div><b>4</b><span>models compared</span></div>
-      <div><b>150</b><span>flowers</span></div>
-    </div>
-
-    <div class="demo">
-      <h3>Try it: measure a flower</h3>
-      <div class="demo-grid">
-        <div>
-          <div class="presets"><span>Load a sample:</span>
-            <button data-iris="5.1,3.5,1.4,0.2">Setosa</button>
-            <button data-iris="6.0,2.8,4.5,1.4">Versicolor</button>
-            <button data-iris="6.7,3.1,5.6,2.3">Virginica</button>
-          </div>
-          <div id="iris-sliders" class="sliders"></div>
-        </div>
-        <div class="result">
-          <p class="label">Predicted species</p>
-          <p id="iris-pred" class="big">–</p>
-          <div id="iris-votes" class="bars"></div>
-          <svg id="iris-plot" viewBox="0 0 320 220" role="img" aria-label="Petal length vs petal width of training flowers with your flower highlighted"></svg>
-          <p class="note">Your flower (black ring) among the 120 training flowers, by petal size. The model votes using the 5 nearest flowers across all four measurements.</p>
-        </div>
-      </div>
-    </div>
-
-    <div class="media">
-      <video id="iris-video" controls preload="none" poster="assets/iris/poster.jpg"><source src="videos/iris.mp4" type="video/mp4"></video>
-    </div>
-    <div class="gallery">
-      <figure><a href="assets/iris/pairplot.png" target="_blank"><img loading="lazy" src="assets/iris/pairplot.png" alt="Pairplot of iris features by species"></a><figcaption>Petal measurements separate the species</figcaption></figure>
-      <figure><a href="assets/iris/feature_importance.png" target="_blank"><img loading="lazy" src="assets/iris/feature_importance.png" alt="Feature importance"></a><figcaption>Petal length & width matter most</figcaption></figure>
-      <figure><a href="assets/iris/confusion_matrices.png" target="_blank"><img loading="lazy" src="assets/iris/confusion_matrices.png" alt="Confusion matrices"></a><figcaption>Only versicolor/virginica get confused</figcaption></figure>
-      <figure><a href="assets/iris/model_comparison.png" target="_blank"><img loading="lazy" src="assets/iris/model_comparison.png" alt="Model comparison"></a><figcaption>KNN has the best cross-validation score</figcaption></figure>
-    </div>
-  </div>
-</section>
-
-<!-- ============ SPAM ============ -->
-<section id="spam" class="project alt">
-  <div class="wrap">
-    <div class="phead">
-      <div>
-        <p class="eyebrow">Task 4 · Natural language processing</p>
-        <h2>Email Spam Detection</h2>
-        <p>Cleans each message, turns it into <b>TF-IDF</b> features and classifies it with <b>Multinomial Naive Bayes</b>, trained on 5,171 SMS messages. Recall matters here: every missed spam lands in someone's inbox.</p>
-      </div>
-      <div class="links">
-        <a class="btn" href="https://github.com/SNischayPrasad/OIBSIP/tree/main/DataScience-Task4-EmailSpamDetection" target="_blank" rel="noopener">Code on GitHub ↗</a>
-        <a class="btn ghost" href="https://github.com/SNischayPrasad/OIBSIP/blob/main/DataScience-Task4-EmailSpamDetection/Email_Spam_Detection.ipynb" target="_blank" rel="noopener">Notebook ↗</a>
-      </div>
-    </div>
-    <div class="metrics">
-      <div><b>98.8%</b><span>accuracy</span></div>
-      <div><b>96.1%</b><span>spam precision</span></div>
-      <div><b>94.7%</b><span>spam recall</span></div>
-      <div><b>0.954</b><span>spam F1</span></div>
-    </div>
-
-    <div class="demo">
-      <h3>Try it: is this message spam?</h3>
-      <div class="demo-grid">
-        <div>
-          <div class="presets"><span>Examples:</span>
-            <button data-spam="Congratulations! You have WON a free iPhone. Call 09061701461 now to claim your prize">Prize scam</button>
-            <button data-spam="URGENT: your account has been suspended. Verify now at www.secure-bank-login.com">Phishing</button>
-            <button data-spam="Hey, are we still meeting for lunch tomorrow at 1?">Friend</button>
-            <button data-spam="Can you send me the notes from today's class?">Classmate</button>
-          </div>
-          <textarea id="spam-text" rows="5" placeholder="Type or paste a message…"></textarea>
-        </div>
-        <div class="result">
-          <p class="label">Verdict</p>
-          <p id="spam-pred" class="big">–</p>
-          <div class="meter"><div id="spam-meter"></div></div>
-          <p id="spam-prob" class="note"></p>
-          <p class="label">Words driving the decision</p>
-          <div id="spam-words" class="chips"></div>
-        </div>
-      </div>
-      <p class="note small">The browser version uses the notebook's pipeline without word stemming so it can run in JavaScript; it scores 99.1% accuracy on the same test set.</p>
-    </div>
-
-    <div class="media">
-      <video id="spam-video" controls preload="none" poster="assets/spam/poster.jpg"><source src="videos/spam.mp4" type="video/mp4"></video>
-    </div>
-    <div class="gallery">
-      <figure><a href="assets/spam/class_distribution.png" target="_blank"><img loading="lazy" src="assets/spam/class_distribution.png" alt="Class distribution"></a><figcaption>Only 12.6% of messages are spam</figcaption></figure>
-      <figure><a href="assets/spam/confusion_matrices.png" target="_blank"><img loading="lazy" src="assets/spam/confusion_matrices.png" alt="Confusion matrices"></a><figcaption>Errors per model on 1,035 test messages</figcaption></figure>
-      <figure><a href="assets/spam/wordclouds.png" target="_blank"><img loading="lazy" src="assets/spam/wordclouds.png" alt="Word clouds for spam and ham"></a><figcaption>Spam vs ham vocabulary</figcaption></figure>
-      <figure><a href="assets/spam/top_terms.png" target="_blank"><img loading="lazy" src="assets/spam/top_terms.png" alt="Top spam and ham terms"></a><figcaption>Numbers and links are the strongest spam signals</figcaption></figure>
-    </div>
-  </div>
-</section>
-
-<!-- ============ SALES ============ -->
-<section id="sales" class="project">
-  <div class="wrap">
-    <div class="phead">
-      <div>
-        <p class="eyebrow">Task 5 · Regression</p>
-        <h2>Sales Prediction</h2>
-        <p>Predicts product sales from TV, Radio and Newspaper ad spend across 200 markets. A <b>degree-2 polynomial regression</b> captures diminishing returns and the TV × Radio synergy that a straight line misses.</p>
-      </div>
-      <div class="links">
-        <a class="btn" href="https://github.com/SNischayPrasad/OIBSIP/tree/main/DataScience-Task5-SalesPrediction" target="_blank" rel="noopener">Code on GitHub ↗</a>
-        <a class="btn ghost" href="https://github.com/SNischayPrasad/OIBSIP/blob/main/DataScience-Task5-SalesPrediction/Sales_Prediction.ipynb" target="_blank" rel="noopener">Notebook ↗</a>
-      </div>
-    </div>
-    <div class="metrics">
-      <div><b>0.987</b><span>R² (vs 0.899 linear)</span></div>
-      <div><b>0.53</b><span>MAE, thousand units</span></div>
-      <div><b>TV</b><span>biggest overall impact</span></div>
-      <div><b>≈0</b><span>newspaper effect</span></div>
-    </div>
-
-    <div class="demo">
-      <h3>Try it: plan an ad budget</h3>
-      <div class="demo-grid">
-        <div>
-          <div class="presets"><span>Plans:</span>
-            <button data-sales="150,25,20">Balanced</button>
-            <button data-sales="250,5,60">TV + Newspaper</button>
-            <button data-sales="230,40,0">TV + Radio</button>
-          </div>
-          <div id="sales-sliders" class="sliders"></div>
-        </div>
-        <div class="result">
-          <p class="label">Predicted sales</p>
-          <p class="big"><span id="sales-pred">–</span> <small>thousand units</small></p>
-          <p class="label">Total budget: <b id="sales-budget">–</b></p>
-          <button id="sales-shift" class="btn small">Move the newspaper budget to TV and Radio</button>
-          <p id="sales-shift-out" class="note"></p>
-        </div>
-      </div>
-    </div>
-
-    <div class="media">
-      <video id="sales-video" controls preload="none" poster="assets/sales/poster.jpg"><source src="videos/sales.mp4" type="video/mp4"></video>
-    </div>
-    <div class="gallery">
-      <figure><a href="assets/sales/sales_vs_channels.png" target="_blank"><img loading="lazy" src="assets/sales/sales_vs_channels.png" alt="Sales vs each channel"></a><figcaption>TV tracks sales most closely</figcaption></figure>
-      <figure><a href="assets/sales/model_comparison.png" target="_blank"><img loading="lazy" src="assets/sales/model_comparison.png" alt="Model comparison"></a><figcaption>Polynomial regression wins on every metric</figcaption></figure>
-      <figure><a href="assets/sales/residual_plots.png" target="_blank"><img loading="lazy" src="assets/sales/residual_plots.png" alt="Residual plots"></a><figcaption>The linear model's errors form a U-shape</figcaption></figure>
-      <figure><a href="assets/sales/channel_impact.png" target="_blank"><img loading="lazy" src="assets/sales/channel_impact.png" alt="Channel impact"></a><figcaption>TV and Radio drive sales; newspaper barely does</figcaption></figure>
-    </div>
-  </div>
-</section>
 </main>
 
 <footer>
@@ -207,6 +45,5 @@
     <p>Sadhanala Nischay Prasad · Oasis Infobyte Internship (OIBSIP), Data Science track · <a href="https://github.com/SNischayPrasad/OIBSIP" target="_blank" rel="noopener">github.com/SNischayPrasad/OIBSIP</a></p>
   </div>
 </footer>
-<script src="app.js"></script>
 </body>
 </html>

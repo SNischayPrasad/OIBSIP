@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sales Prediction · Sadhanala Nischay Prasad</title>
+<meta name="description" content="Plan an ad budget and predict sales live in your browser with polynomial regression (R² = 0.987).">
+<meta property="og:title" content="Sales Prediction · Task 5 · Nischay Prasad">
+<meta property="og:description" content="Plan an ad budget and predict sales live in your browser with polynomial regression (R² = 0.987).">
+<meta property="og:image" content="https://nischay-oibsip-data-science.vercel.app/assets/sales/poster.jpg">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='7' fill='%230f766e'/><path d='M8 22l5-6 4 3 7-9' stroke='white' stroke-width='3' fill='none' stroke-linecap='round' stroke-linejoin='round'/></svg>">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="top">
+  <div class="wrap nav">
+    <a class="brand" href="index.html">Nischay<span>.ds</span></a>
+    <nav>
+      <a href="iris.html">Iris</a><a href="spam.html">Spam</a><a href="sales.html" class="on" aria-current="page">Sales</a>
+      <a class="gh" href="https://github.com/SNischayPrasad/OIBSIP" target="_blank" rel="noopener">GitHub ↗</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+<section id="sales" class="project page">
+  <div class="wrap">
+    <p class="crumb"><a href="index.html">← All projects</a></p>
+    <div class="phead">
+      <div>
+        <p class="eyebrow">Task 5 · Regression</p>
+        <h2>Sales Prediction</h2>
+        <p>Predicts product sales from TV, Radio and Newspaper ad spend across 200 markets. A <b>degree-2 polynomial regression</b> captures diminishing returns and the TV × Radio synergy that a straight line misses.</p>
+      </div>
+      <div class="links">
+        <a class="btn" href="https://github.com/SNischayPrasad/OIBSIP/tree/main/DataScience-Task5-SalesPrediction" target="_blank" rel="noopener">Code on GitHub ↗</a>
+        <a class="btn ghost" href="https://github.com/SNischayPrasad/OIBSIP/blob/main/DataScience-Task5-SalesPrediction/Sales_Prediction.ipynb" target="_blank" rel="noopener">Notebook ↗</a>
+      </div>
+    </div>
+    <div class="metrics">
+      <div><b>0.987</b><span>R² (vs 0.899 linear)</span></div>
+      <div><b>0.53</b><span>MAE, thousand units</span></div>
+      <div><b>TV</b><span>biggest overall impact</span></div>
+      <div><b>≈0</b><span>newspaper effect</span></div>
+    </div>
+
+    <div class="demo">
+      <h3>Try it: plan an ad budget</h3>
+      <div class="demo-grid">
+        <div>
+          <div class="presets"><span>Plans:</span>
+            <button data-sales="150,25,20">Balanced</button>
+            <button data-sales="250,5,60">TV + Newspaper</button>
+            <button data-sales="230,40,0">TV + Radio</button>
+          </div>
+          <div id="sales-sliders" class="sliders"></div>
+        </div>
+        <div class="result">
+          <p class="label">Predicted sales</p>
+          <p class="big"><span id="sales-pred">–</span> <small>thousand units</small></p>
+          <p class="label">Total budget: <b id="sales-budget">–</b></p>
+          <button id="sales-shift" class="btn small">Move the newspaper budget to TV and Radio</button>
+          <p id="sales-shift-out" class="note"></p>
+        </div>
+      </div>
+    </div>
+
+    <div class="media">
+      <video id="sales-video" controls preload="none" poster="assets/sales/poster.jpg"><source src="videos/sales.mp4" type="video/mp4"></video>
+    </div>
+    <div class="gallery">
+      <figure><a href="assets/sales/sales_vs_channels.png" target="_blank"><img loading="lazy" src="assets/sales/sales_vs_channels.png" alt="Sales vs each channel"></a><figcaption>TV tracks sales most closely</figcaption></figure>
+      <figure><a href="assets/sales/model_comparison.png" target="_blank"><img loading="lazy" src="assets/sales/model_comparison.png" alt="Model comparison"></a><figcaption>Polynomial regression wins on every metric</figcaption></figure>
+      <figure><a href="assets/sales/residual_plots.png" target="_blank"><img loading="lazy" src="assets/sales/residual_plots.png" alt="Residual plots"></a><figcaption>The linear model's errors form a U-shape</figcaption></figure>
+      <figure><a href="assets/sales/channel_impact.png" target="_blank"><img loading="lazy" src="assets/sales/channel_impact.png" alt="Channel impact"></a><figcaption>TV and Radio drive sales; newspaper barely does</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<section class="pager">
+  <div class="wrap">
+    <a href="spam.html"><span>← Previous project</span><b>Email Spam Detection</b></a>
+    <a href="iris.html" class="next"><span>Next project →</span><b>Iris Flower Classification</b></a>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <p>Sadhanala Nischay Prasad · Oasis Infobyte Internship (OIBSIP), Data Science track · <a href="https://github.com/SNischayPrasad/OIBSIP" target="_blank" rel="noopener">github.com/SNischayPrasad/OIBSIP</a></p>
+  </div>
+</footer>
+<script src="app.js"></script>
+</body>
+</html>

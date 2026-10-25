@@ -1,5 +1,6 @@
 // Runs the three exported models in the browser. Model parameters come from website/models/*.json,
-// which build_models.py exports from the same training code as the notebooks.
+// which build_models.py exports from the same training code as the notebooks. Each project page
+// loads only the model whose demo it contains.
 
 const $ = s => document.querySelector(s);
 const load = name => fetch(`models/${name}.json`).then(r => r.json());
@@ -16,7 +17,7 @@ function slider(container, { id, label, min, max, step, value, unit = '' }, onIn
 }
 
 /* ---------------- Task 1: Iris (KNN, k = 5) ---------------- */
-load('iris').then(m => {
+if ($('#iris-sliders')) load('iris').then(m => {
   const colors = { setosa: css('--setosa'), versicolor: css('--versicolor'), virginica: css('--virginica') };
   const defs = [
     ['sepal length', 4.3, 7.9], ['sepal width', 2.0, 4.4], ['petal length', 1.0, 6.9], ['petal width', 0.1, 2.5],
@@ -54,7 +55,7 @@ load('iris').then(m => {
 });
 
 /* ---------------- Task 4: Spam (TF-IDF + Multinomial Naive Bayes) ---------------- */
-load('spam').then(m => {
+if ($('#spam-text')) load('spam').then(m => {
   const stop = new Set(m.stopwords);
   const punct = /[!"#$%&'()*+,\-./:;<=>?@[\\\]^_`{|}~]/g;
   const clean = t => t.toLowerCase()
@@ -98,7 +99,7 @@ load('spam').then(m => {
 });
 
 /* ---------------- Task 5: Sales (degree-2 polynomial regression) ---------------- */
-load('sales').then(m => {
+if ($('#sales-sliders')) load('sales').then(m => {
   const names = ['TV', 'Radio', 'Newspaper'];
   const box = $('#sales-sliders');
   const sliders = names.map((n, i) => slider(box, {
