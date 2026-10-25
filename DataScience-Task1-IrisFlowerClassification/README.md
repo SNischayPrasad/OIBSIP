@@ -2,7 +2,7 @@
 
 **Oasis Infobyte Internship (OIBSIP) · Data Science · Task 1**
 
-🚀 **Live demo:** https://nischay-oibsip-data-science.vercel.app/#iris · 🎬 [Demo video with voice-over](../website/videos/iris.mp4)
+🚀 **Live demo:** https://nischay-oibsip-data-science.vercel.app/iris · 🎬 [Demo video with voice-over](../website/videos/iris.mp4)
 
 A machine learning model that identifies the species of an iris flower (*setosa*, *versicolor* or
 *virginica*) from four measurements: sepal length, sepal width, petal length and petal width.

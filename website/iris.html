@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Iris Flower Classification · Sadhanala Nischay Prasad</title>
+<meta name="description" content="Classify an iris flower live in your browser with a KNN model (96.7% CV accuracy).">
+<meta property="og:title" content="Iris Flower Classification · Task 1 · Nischay Prasad">
+<meta property="og:description" content="Classify an iris flower live in your browser with a KNN model (96.7% CV accuracy).">
+<meta property="og:image" content="https://nischay-oibsip-data-science.vercel.app/assets/iris/poster.jpg">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='7' fill='%230f766e'/><path d='M8 22l5-6 4 3 7-9' stroke='white' stroke-width='3' fill='none' stroke-linecap='round' stroke-linejoin='round'/></svg>">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="top">
+  <div class="wrap nav">
+    <a class="brand" href="index.html">Nischay<span>.ds</span></a>
+    <nav>
+      <a href="iris.html" class="on" aria-current="page">Iris</a><a href="spam.html">Spam</a><a href="sales.html">Sales</a>
+      <a class="gh" href="https://github.com/SNischayPrasad/OIBSIP" target="_blank" rel="noopener">GitHub ↗</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+<section id="iris" class="project page">
+  <div class="wrap">
+    <p class="crumb"><a href="index.html">← All projects</a></p>
+    <div class="phead">
+      <div>
+        <p class="eyebrow">Task 1 · Classification</p>
+        <h2>Iris Flower Classification</h2>
+        <p>Identifies an iris flower's species (<em>setosa</em>, <em>versicolor</em> or <em>virginica</em>) from four measurements. Four classifiers were compared; <b>K-Nearest Neighbours</b> won on cross-validation.</p>
+      </div>
+      <div class="links">
+        <a class="btn" href="https://github.com/SNischayPrasad/OIBSIP/tree/main/DataScience-Task1-IrisFlowerClassification" target="_blank" rel="noopener">Code on GitHub ↗</a>
+        <a class="btn ghost" href="https://github.com/SNischayPrasad/OIBSIP/blob/main/DataScience-Task1-IrisFlowerClassification/Iris_Flower_Classification.ipynb" target="_blank" rel="noopener">Notebook ↗</a>
+      </div>
+    </div>
+    <div class="metrics">
+      <div><b>93.3%</b><span>test accuracy</span></div>
+      <div><b>96.7%</b><span>5-fold CV accuracy</span></div>
+      <div><b>4</b><span>models compared</span></div>
+      <div><b>150</b><span>flowers</span></div>
+    </div>
+
+    <div class="demo">
+      <h3>Try it: measure a flower</h3>
+      <div class="demo-grid">
+        <div>
+          <div class="presets"><span>Load a sample:</span>
+            <button data-iris="5.1,3.5,1.4,0.2">Setosa</button>
+            <button data-iris="6.0,2.8,4.5,1.4">Versicolor</button>
+            <button data-iris="6.7,3.1,5.6,2.3">Virginica</button>
+          </div>
+          <div id="iris-sliders" class="sliders"></div>
+        </div>
+        <div class="result">
+          <p class="label">Predicted species</p>
+          <p id="iris-pred" class="big">–</p>
+          <div id="iris-votes" class="bars"></div>
+          <svg id="iris-plot" viewBox="0 0 320 220" role="img" aria-label="Petal length vs petal width of training flowers with your flower highlighted"></svg>
+          <p class="note">Your flower (black ring) among the 120 training flowers, by petal size. The model votes using the 5 nearest flowers across all four measurements.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="media">
+      <video id="iris-video" controls preload="none" poster="assets/iris/poster.jpg"><source src="videos/iris.mp4" type="video/mp4"></video>
+    </div>
+    <div class="gallery">
+      <figure><a href="assets/iris/pairplot.png" target="_blank"><img loading="lazy" src="assets/iris/pairplot.png" alt="Pairplot of iris features by species"></a><figcaption>Petal measurements separate the species</figcaption></figure>
+      <figure><a href="assets/iris/feature_importance.png" target="_blank"><img loading="lazy" src="assets/iris/feature_importance.png" alt="Feature importance"></a><figcaption>Petal length & width matter most</figcaption></figure>
+      <figure><a href="assets/iris/confusion_matrices.png" target="_blank"><img loading="lazy" src="assets/iris/confusion_matrices.png" alt="Confusion matrices"></a><figcaption>Only versicolor/virginica get confused</figcaption></figure>
+      <figure><a href="assets/iris/model_comparison.png" target="_blank"><img loading="lazy" src="assets/iris/model_comparison.png" alt="Model comparison"></a><figcaption>KNN has the best cross-validation score</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<section class="pager">
+  <div class="wrap">
+    <a href="sales.html"><span>← Previous project</span><b>Sales Prediction</b></a>
+    <a href="spam.html" class="next"><span>Next project →</span><b>Email Spam Detection</b></a>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <p>Sadhanala Nischay Prasad · Oasis Infobyte Internship (OIBSIP), Data Science track · <a href="https://github.com/SNischayPrasad/OIBSIP" target="_blank" rel="noopener">github.com/SNischayPrasad/OIBSIP</a></p>
+  </div>
+</footer>
+<script src="app.js"></script>
+</body>
+</html>

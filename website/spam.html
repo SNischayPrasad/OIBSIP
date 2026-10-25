@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Email Spam Detection · Sadhanala Nischay Prasad</title>
+<meta name="description" content="Check any message for spam live in your browser with a TF-IDF + Naive Bayes model (98.8% accuracy).">
+<meta property="og:title" content="Email Spam Detection · Task 4 · Nischay Prasad">
+<meta property="og:description" content="Check any message for spam live in your browser with a TF-IDF + Naive Bayes model (98.8% accuracy).">
+<meta property="og:image" content="https://nischay-oibsip-data-science.vercel.app/assets/spam/poster.jpg">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='7' fill='%230f766e'/><path d='M8 22l5-6 4 3 7-9' stroke='white' stroke-width='3' fill='none' stroke-linecap='round' stroke-linejoin='round'/></svg>">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="top">
+  <div class="wrap nav">
+    <a class="brand" href="index.html">Nischay<span>.ds</span></a>
+    <nav>
+      <a href="iris.html">Iris</a><a href="spam.html" class="on" aria-current="page">Spam</a><a href="sales.html">Sales</a>
+      <a class="gh" href="https://github.com/SNischayPrasad/OIBSIP" target="_blank" rel="noopener">GitHub ↗</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+<section id="spam" class="project page">
+  <div class="wrap">
+    <p class="crumb"><a href="index.html">← All projects</a></p>
+    <div class="phead">
+      <div>
+        <p class="eyebrow">Task 4 · Natural language processing</p>
+        <h2>Email Spam Detection</h2>
+        <p>Cleans each message, turns it into <b>TF-IDF</b> features and classifies it with <b>Multinomial Naive Bayes</b>, trained on 5,171 SMS messages. Recall matters here: every missed spam lands in someone's inbox.</p>
+      </div>
+      <div class="links">
+        <a class="btn" href="https://github.com/SNischayPrasad/OIBSIP/tree/main/DataScience-Task4-EmailSpamDetection" target="_blank" rel="noopener">Code on GitHub ↗</a>
+        <a class="btn ghost" href="https://github.com/SNischayPrasad/OIBSIP/blob/main/DataScience-Task4-EmailSpamDetection/Email_Spam_Detection.ipynb" target="_blank" rel="noopener">Notebook ↗</a>
+      </div>
+    </div>
+    <div class="metrics">
+      <div><b>98.8%</b><span>accuracy</span></div>
+      <div><b>96.1%</b><span>spam precision</span></div>
+      <div><b>94.7%</b><span>spam recall</span></div>
+      <div><b>0.954</b><span>spam F1</span></div>
+    </div>
+
+    <div class="demo">
+      <h3>Try it: is this message spam?</h3>
+      <div class="demo-grid">
+        <div>
+          <div class="presets"><span>Examples:</span>
+            <button data-spam="Congratulations! You have WON a free iPhone. Call 09061701461 now to claim your prize">Prize scam</button>
+            <button data-spam="URGENT: your account has been suspended. Verify now at www.secure-bank-login.com">Phishing</button>
+            <button data-spam="Hey, are we still meeting for lunch tomorrow at 1?">Friend</button>
+            <button data-spam="Can you send me the notes from today's class?">Classmate</button>
+          </div>
+          <textarea id="spam-text" rows="5" placeholder="Type or paste a message…"></textarea>
+        </div>
+        <div class="result">
+          <p class="label">Verdict</p>
+          <p id="spam-pred" class="big">–</p>
+          <div class="meter"><div id="spam-meter"></div></div>
+          <p id="spam-prob" class="note"></p>
+          <p class="label">Words driving the decision</p>
+          <div id="spam-words" class="chips"></div>
+        </div>
+      </div>
+      <p class="note small">The browser version uses the notebook's pipeline without word stemming so it can run in JavaScript; it scores 99.1% accuracy on the same test set.</p>
+    </div>
+
+    <div class="media">
+      <video id="spam-video" controls preload="none" poster="assets/spam/poster.jpg"><source src="videos/spam.mp4" type="video/mp4"></video>
+    </div>
+    <div class="gallery">
+      <figure><a href="assets/spam/class_distribution.png" target="_blank"><img loading="lazy" src="assets/spam/class_distribution.png" alt="Class distribution"></a><figcaption>Only 12.6% of messages are spam</figcaption></figure>
+      <figure><a href="assets/spam/confusion_matrices.png" target="_blank"><img loading="lazy" src="assets/spam/confusion_matrices.png" alt="Confusion matrices"></a><figcaption>Errors per model on 1,035 test messages</figcaption></figure>
+      <figure><a href="assets/spam/wordclouds.png" target="_blank"><img loading="lazy" src="assets/spam/wordclouds.png" alt="Word clouds for spam and ham"></a><figcaption>Spam vs ham vocabulary</figcaption></figure>
+      <figure><a href="assets/spam/top_terms.png" target="_blank"><img loading="lazy" src="assets/spam/top_terms.png" alt="Top spam and ham terms"></a><figcaption>Numbers and links are the strongest spam signals</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<section class="pager">
+  <div class="wrap">
+    <a href="iris.html"><span>← Previous project</span><b>Iris Flower Classification</b></a>
+    <a href="sales.html" class="next"><span>Next project →</span><b>Sales Prediction</b></a>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <p>Sadhanala Nischay Prasad · Oasis Infobyte Internship (OIBSIP), Data Science track · <a href="https://github.com/SNischayPrasad/OIBSIP" target="_blank" rel="noopener">github.com/SNischayPrasad/OIBSIP</a></p>
+  </div>
+</footer>
+<script src="app.js"></script>
+</body>
+</html>

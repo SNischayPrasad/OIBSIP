@@ -2,7 +2,7 @@
 
 Projects completed during the **Oasis Infobyte Internship Program (OIBSIP)**, Data Science track.
 
-**Live demo website:** https://nischay-oibsip-data-science.vercel.app (try all three models in your browser; source in [`website/`](website)).
+**Live demo website:** https://nischay-oibsip-data-science.vercel.app (each project has its own page: [Iris](https://nischay-oibsip-data-science.vercel.app/iris), [Spam](https://nischay-oibsip-data-science.vercel.app/spam), [Sales](https://nischay-oibsip-data-science.vercel.app/sales); source in [`website/`](website)).
 
 | Task | Project | Highlights |
 |---|---|---|
